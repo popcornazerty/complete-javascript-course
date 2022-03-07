@@ -55,7 +55,7 @@ const calcYears = (birthYear, firstName) => {
 }
 console.log(calcYears(1989,'Nicolas'));
 */
-
+/*
 function cutMachine(fruit) {
   return fruit * 4;
 }
@@ -103,4 +103,160 @@ function repareCar(isTiresGood, isFuel) {
 }
 
 repareCar(false, true);
+*/
+
+/*
+const friends = ['Vitalik', 'Mark', 'Justin'];
+console.log(friends);
+console.log(friends[0]);
+console.log(friends[1]);
+console.log(friends.length);
+// const years = new Array(1991,1984,2008,2020);
+// Change an element in the table
+friends[1] = 'Joe';
+console.log(friends);
+
+const nicolas = ['Nicolas', 'Godefroy', 2022 - 1989, 'Student', friends];
+console.log(nicolas);
+
+
+// Exercice 
+
+
+// function expression
+const calcAge = function(birthYear) {
+  return 2080 - birthYear;
+}
+
+const years = [1990, 2005, 2003, 2058];
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[2]);
+const age3 = calcAge(years[years.length-1]);
+console.log(age1,age2,age3);
+
+const ages = [calcAge(years[0]),calcAge(years[2]),calcAge(years[years.length-1])];
+console.log(ages);
+
+
+const friends = ['Vitalik', 'Mark', 'Justin'];
+// add an element in the end
+// friends.push('clown');
+const newLenght = friends.push('clown');
+console.log(friends);
+// add an element at the begining 
+friends.unshift('Zartek');
+console.log(friends);
+
+// delete the last element of the table
+friends.pop();
+console.log(friends); 
+
+// delete the first element of the table
+friends.shift();
+console.log(friends);
+
+//  Arrays
+
+const  nicolasArray = [
+  'nicolas',
+  'godefroy'
+]
+// L'ordre est important et il est croissant (1 à 2 ici)
+
+// Objects
+// Il n'y a pas d'ordre puisque on peut appeler les objets par leur noms
+const nicolas = {
+  firstName : 'Nicolas',
+  lastName : 'Godefroy',
+  age : 2022 - 1989,
+  crypto : ['Avax', 'Sol', 'Luna']
+};
+// Pour récupérer un élément nous utilisons
+console.log(nicolas.firstName);
+// Pour rajouter un élement 
+nicolas.location = 'France'; 
+// Pour ajouter une expression
+nicolas['twitter'] = '@popcornazerty';
+//  Pour récupérer une partie de l'objet et l'intégrer dans une const
+const nameKey = 'Name'; // On récupére ici le Name du first et last
+console.log(nicolas['first' + nameKey]);
+console.log(nicolas['last' + nameKey]);
+
+// const interestedIn = prompt('Que veux tu savoir sur moi fréro? Choose between firstName, lastName, age, crypto')
+//  let result = (nicolas[interestedIn]);
+/*
+if (result) {
+  console.log(result);
+} else {
+console.log(`'Votre entrée n'existe pas, Choose between firstName, lastName, age, crypto' `)
+}
+
+
+// console.log(nicolas);
+
+
+// DEFI
+//  "Jonas has 3 friends, and his best friend is called Michael"
+
+const jonasFriends = {
+  firstName : 'Jonas',
+  friends : ['Michael', 'Peter', 'Steven'],
+  // friendsNumber : '3 friends'
+};
+// let bestFriend = jonasFriends.friends[0];
+
+console.log(`"${jonasFriends.firstName} has ${jonasFriends.friends.length} friends, and his best friend is called ${jonasFriends.friends[0]}"`)
+
+*/
+const nicolas = {
+  firstName: "Nicolas",
+  lastName: "Godefroy",
+  birthYear: 1989,
+  crypto: ["Avax", "Sol", "Luna"],
+  job: "Student",
+  hasDriversLicense: true,
+
+  // Ici il faut rajouter le birthyear dans le parametre de la function (i)
+  //   calcAge : function() {
+  //     return 2022 - birthYear;
+  //   }
+
+  // //  Ici le "this.birthyear" permet de relier la function à l objet du tableau demandé
+      calcAge : function() {
+       return 2022 - this.birthYear;
+     },
+
+    //  getSummary: function() {
+    //   if(nicolas.hasDriversLicense) {
+    //   return console.log(`"${firstName} ${lastName} is a ${nicolas.calcAge()} years old ${job} that loves crypto. His fav coins are ${crypto} and has a ${hasDriversLicense}"`)
+    // }
+
+    getSummary: function() {
+     return `"${this.firstName} ${this.lastName} is a ${this.calcAge()} years old ${this.job} that loves crypto. His fav coins are ${this.crypto} and has ${this.hasDriversLicense ? 'a' : 'no'} drivers license."`
+    }
+
+//   calcAge: function () {
+//     this.age = 2022 - this.birthYear;
+//     return this.age;
+   
+ };
+console.log(nicolas.getSummary());
+
+//  let age = nicolas.calcAge();
+// // // OR
+// let test2 = nicolas["calcAge"]();
+// console.log(test);
+// // OR en utilisant la derniere function
+// console.log(nicolas.calcAge());
+// console.log(nicolas.age);
+
+
+// DEFI 
+// {Nicolas} {godefroy} is a {birthyear} year old {job} that loves crypto, his fav coins are {crypto} and he has a driver {driversLicense}
+ 
+
+//  console.log(nicolas.hasDriversLicense.toString());
+
+
 
