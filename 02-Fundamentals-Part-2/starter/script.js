@@ -208,7 +208,7 @@ const jonasFriends = {
 
 console.log(`"${jonasFriends.firstName} has ${jonasFriends.friends.length} friends, and his best friend is called ${jonasFriends.friends[0]}"`)
 
-*/
+
 const nicolas = {
   firstName: "Nicolas",
   lastName: "Godefroy",
@@ -259,4 +259,90 @@ console.log(nicolas.getSummary());
 //  console.log(nicolas.hasDriversLicense.toString());
 
 
+// Boucles loop
+//  Boucles for continuent d'etre executées tant que la condition est TRUE
 
+// for(let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep}`);
+// }
+
+
+
+
+const types = [];
+for(let i = 0; i < nicolas.length; i++) {
+// Reading from nicolas array 
+  console.log(nicolas[i]);
+// filling types array
+  types[i] = typeof nicolas[i];
+  // OR
+  types.push(typeof nicolas[i]);
+}
+console.log(types);
+
+
+//  Continue 
+console.log('----ONLY STRINGS----')
+for (let i = 0; i < nicolas.length; i++) {
+  if(typeof nicolas[i] != 'string') continue; 
+    console.log(nicolas[i],typeof nicolas[i]);
+  }
+// Break
+console.log('----ONLY NUMBER----')
+for (let i = 0; i < nicolas.length; i++) {
+  if(typeof nicolas[i] === 'number') break; 
+    console.log(nicolas[i],typeof nicolas[i]);
+  }
+
+
+const years = [1989, 2007, 2005, 1960];
+const ages = [];
+for(let i = 0; i < years.length; i++) {
+  ages.push(2022 - years[i]);
+}
+console.log(ages);
+
+
+
+// Loop backwards
+
+const nicolas = [
+  'Nicolas',
+  'Godefroy',
+   2022 - 1989,
+   ['Avax', 'Sol', 'Luna'],
+ ];
+
+ for(let i = nicolas.length -1; i >= 0; i--) {
+   console.log(i, nicolas[i]);
+ }
+
+
+//  loop inside a loop
+
+for(let exercise = 1; exercise <= 3; exercise++) {
+  console.log(`----starting exercise ${exercise}`);
+  for(let first = 1; first <= 5; first++)
+  console.log(`----first exercise ${first}`);
+}
+
+
+//  While loop
+// for(let rep = 1; rep <= 10; rep++) {
+//   console.log(`lifting weight ${rep}`);
+// }
+let rep = 1;
+while (rep <= 10) {
+  console.log(`lifting weight ${rep}`);
+  rep++;
+}
+*/
+
+//  lancement de dès: la boucle va multiplier un nombre aléatoire par (6 chiffres sur un dès)
+//  La boucle while est utile lorsque l'on ne sait pas combien d'itérations il y aura
+let dice = Math.trunc(Math.random() * 6) + 1;
+while(dice != 6) {
+  console.log(`your rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log('loop is about to stop');
+} 
