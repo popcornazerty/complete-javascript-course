@@ -1,6 +1,4 @@
-'use strict';
-
-
+"use strict";
 
 /*
 Back to the two gymnastics teams, the Dolphins and the Koalas! There is a new gymnastics discipline, which works differently.
@@ -82,7 +80,7 @@ Let's go back to Mark and John comparing their BMIs! This time, let's use object
 TEST DATA: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m tall.
 
 GOOD LUCK 😀
-*/
+
 // BMI = mass / height ** 2 = mass / (height * height)
 
 
@@ -90,12 +88,12 @@ GOOD LUCK 😀
 function bmi(mass,height) {
 	return mass / height ** 2;
 }  
-/*
+
 let bmiMark = bmi(78,1.69);
 console.log(bmiMark); 
 let bmiJohn = bmi(92,1.95);
 console.log(bmiJohn); 
-*/
+
 
 //   calcAge: function () {
 //     this.age = 2022 - this.birthYear;
@@ -158,7 +156,7 @@ console.log(`"${markMiller.firstName} ${markMiller.lastName}'s BMI (${markMiller
 
 
 
-/*
+
 // function declaration
 function calcAge1(birthYear) {
     return 2022 - birthYear;
@@ -181,11 +179,11 @@ const bills = [125 , 555, 44];
 const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2] ];
 console.log(bills, tips,totals);
-*/
 
 
 
-/*
+
+
 // function expression
 const calcAge = function(birthYear) {
 	return 2080 - birthYear;
@@ -197,10 +195,10 @@ const calcAge = function(birthYear) {
   const age2 = calcAge(years[2]);
   const age3 = calcAge(years[years.length-1]);
   console.log(age1,age2,age3);
-  */
+ 
 
 
-/*
+
 Let's improve Steven's tip calculator even more, this time using loops!
 
 1. Create an array 'bills' containing all 10 test bill values
@@ -217,4 +215,100 @@ HINT: Call calcTip in the loop and use the push method to add values to the tips
   4.3. Call the function with the 'totals' array
 
 GOOD LUCK 😀
+*/
+const calcTip = function(bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
+}
+console.log(bills, tips, totals);
+
+
+// Additionner les elements du tableau 
+const calcAverage = function(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+  }
+  return sum / arr.length; // calcul moyenne
+};
+
+console.log(calcAverage(totals));
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  for (let i = 0; i < bills.length; i++) {
+	const tip = calcTip(bills[i]);
+	tips.push(tip);
+	totals.push(tip + bills[i]);
+  }
+  console.log(bills, tips, totals);
+  
+  const calcAverage = function (arr) {
+	let sum = 0;
+	for (let i = 0; i < arr.length; i++) {
+	  // sum = sum + arr[i];
+	  sum += arr[i];
+	}
+	return sum / arr.length;
+  }
+
+
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2] ];
+// console.log(bills, tips,totals);
+
+// Boucles loop
+//  Boucles for continuent d'etre executées tant que la condition est TRUE
+
+// for(let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep}`);
+// }
+
+
+
+
+// const types = [];
+// for(let i = 0; i < nicolas.length; i++) {
+// // Reading from nicolas array 
+//   console.log(nicolas[i]);
+// // filling types array
+//   types[i] = typeof nicolas[i];
+//   // OR
+//   types.push(typeof nicolas[i]);
+// }
+// console.log(types);
+
+
+// const years = [1989, 2007, 2005, 1960];
+// const ages = [];
+// for(let i = 0; i < years.length; i++) {
+//   ages.push(2022 - years[i]);
+// }
+// console.log(ages);
 */
